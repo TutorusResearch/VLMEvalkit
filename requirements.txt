@@ -38,3 +38,5 @@ transformers
 typing_extensions
 validators
 xlsxwriter
+datasets
+scikit-learn
