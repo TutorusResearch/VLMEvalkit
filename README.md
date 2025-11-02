@@ -6,6 +6,10 @@
 
 English | [简体中文](/docs/zh-CN/README_zh-CN.md) | [日本語](/docs/ja/README_ja.md)
 
+## 🧮 Multimodal Korean Mathematical Reasoning Benchmark
+
+📊 **[Korean Math Benchmark Documentation](/docs/en/KoreanMathBenchmark.md)** - A comprehensive benchmark for evaluating multimodal large language models on Korean mathematical reasoning tasks.
+
 <a href="https://rank.opencompass.org.cn/leaderboard-multimodal">🏆 OC Learderboard </a> •
 <a href="#%EF%B8%8F-quickstart">🏗️Quickstart </a> •
 <a href="#-datasets-models-and-evaluation-results">📊Datasets & Models </a> •
