@@ -4,7 +4,7 @@
 
 from ...smp import *
 from typing import Optional
-
+import re
 
 def _process_digit_article(inText):
     outText = []
@@ -277,6 +277,30 @@ def process_line(line, method='vqa_score'):
         ret['gt'] = answers
         ret['pred'] = line['prediction'].strip()
         ret['match'] = [(1.0 if (x.strip().lower() == ret['pred'].strip().lower()) else 0.0) for x in ret['gt']]
+    elif method == 'accuracy_for_kmmvismath':
+        ret['gt'] = [re.sub(r'(원|개|마리|통|묶음|송이|접시|조각|ml|분|L|시간|%|시|,|장)', '', x.strip()).strip() for x in answers]
+        ret['pred'] = line['prediction'].strip()
+        if '<think>' in ret['pred'] and '</think>' in ret['pred']:
+            end_idx = ret['pred'].rfind('</think') + len('</think>')
+            ret['pred'] = ret['pred'][end_idx:].strip()
+        ret['pred'] = re.sub(r'(원|개|마리|통|묶음|송이|접시|조각|ml|분|L|시간|%|시|,|장)', '', ret['pred'].strip()).strip()
+        ret['match'] = [(1.0 if (x.strip().lower() == ret['pred'].strip().lower()) else 0.0) for x in ret['gt']]
+    elif method == 'relaxed_accuracy_for_chartqa_kor':
+        ret['gt'] = [re.sub(r'(%)', '', str(x).strip()).strip() for x in answers]
+        ret['pred'] = str(line['prediction']).strip()
+        if '<think>' in ret['pred'] and '</think>' in ret['pred']:
+            end_idx = ret['pred'].rfind('</think') + len('</think>')
+            ret['pred'] = ret['pred'][end_idx:].strip()
+        ret['pred'] = re.sub(r'(%)', '', ret['pred'].strip()).strip()
+        ret['match'] = [relaxed_correctness(x, ret['pred']) for x in ret['gt']]
+    elif method == 'relaxed_accuracy_for_elementary_math_kor':
+        ret['gt'] = [str(x).strip() for x in answers]
+        ret['pred'] = str(line['prediction']).strip()
+        if '<think>' in ret['pred'] and '</think>' in ret['pred']:
+            end_idx = ret['pred'].rfind('</think') + len('</think>')
+            ret['pred'] = ret['pred'][end_idx:].strip()
+        ret['pred'] = ret['pred'].split('최종답변:')[-1].strip()
+        ret['match'] = [relaxed_correctness(x, ret['pred']) for x in ret['gt']]
     else:  # default using vqa_score to calculate score
         ret['gt'] = [process_answer(x) for x in answers]
         ret['pred'] = process_answer(line['prediction'])

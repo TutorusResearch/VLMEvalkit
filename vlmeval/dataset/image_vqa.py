@@ -54,7 +54,7 @@ class KMMVisMathDataset(ImageBaseDataset):
         lines = [data.iloc[i] for i in range(lt)]
         
         if listinstr(['KMMVisMath'], dataset):
-            res = pool.map(partial(process_line,method='accuracy_for_json'),lines)
+            res = pool.map(partial(process_line,method='accuracy_for_kmmvismath'),lines)
             
         data['eval_gt'] = [r['gt'] for r in res]
         data['eval_pred'] = [r['pred'] for r in res]
@@ -166,7 +166,7 @@ class ChartQAKORDataset(ImageBaseDataset):
         lines = [data.iloc[i] for i in range(lt)]
         
         if listinstr(['ChartQA_KOR'], dataset):
-            res = pool.map(partial(process_line,method='relaxed_accuracy'),lines)
+            res = pool.map(partial(process_line,method='relaxed_accuracy_for_chartqa_kor'),lines)
             
         data['eval_gt'] = [r['gt'] for r in res]
         data['eval_pred'] = [r['pred'] for r in res]
@@ -271,7 +271,7 @@ class ElementaryMathKORDataset(ImageBaseDataset):
         lines = [data.iloc[i] for i in range(lt)]
         
         if listinstr(['ELEMENTARY_MATH_KOR'], dataset):
-            res = pool.map(partial(process_line,method='relaxed_accuracy_for_kor_math'),lines)
+            res = pool.map(partial(process_line,method='relaxed_accuracy_for_elementary_math_kor'),lines)
             
         data['eval_gt'] = [r['gt'] for r in res]
         data['eval_pred'] = [r['pred'] for r in res]
