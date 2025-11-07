@@ -56,7 +56,7 @@ class Qwen3VLPromptMixin:
             return self._build_kmmvismath_kor_prompt(line, dataset)
         if dataset in {'ChartQA_KOR'}:
             return self._build_chartqa_kor_prompt(line, dataset)
-        if dataset in {'ELEMENTARY_MATH_KOR'}:
+        if dataset in {'ELEMENTARY_MATH'}:
             return self._build_elementary_math_kor_prompt(line, dataset) 
         if dataset_type == 'VQA':
             return self._build_vqa_prompt(line, dataset)
@@ -229,7 +229,7 @@ class Qwen3VLPromptMixin:
     
     def _build_elementary_math_kor_prompt(self, line, dataset: str) -> list[dict[str, str]]:
         """change the prompt for VQA dataset:"""
-        ELEMENTARY_MATH_KOR_PROMPT = dedent("""
+        ELEMENTARY_MATH_PROMPT = dedent("""
             다음은 한국 초등학교 수학 문제입니다. 이미지를 보고 문제를 풀어주세요.
 
             ## 답변 형식 지침
@@ -262,6 +262,6 @@ class Qwen3VLPromptMixin:
             msgs = [dict(type='image', value=tgt_path)]
         msgs.append(dict(type='text', value=question))
         assert msgs[-1]['type'] == 'text'
-        msgs[-1]['value'] = ELEMENTARY_MATH_KOR_PROMPT.format_map({'question':msgs[-1]['value']})
+        msgs[-1]['value'] = ELEMENTARY_MATH_PROMPT.format_map({'question':msgs[-1]['value']})
         print(f"build_elementary_math_kor_prompt: {msgs[-1]['value']}")
         return msgs

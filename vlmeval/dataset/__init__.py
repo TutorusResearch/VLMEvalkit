@@ -15,7 +15,7 @@ from .image_vqa import (
     TableVQABench, CustomVQADataset, CRPE, MathVerse, OlympiadBench, SeePhys, QSpatial, VizWiz, MMNIAH, LogicVista,
     MME_CoT, MMSci_Captioning, Physics_yale, TDBenchGrounding, WildDocBenchmark, OCR_Reasoning, PhyX, CountBenchQA,
     ZEROBench, Omni3DBench, TallyQA, MMEReasoning, MMVMBench, BMMR, OCRBench_v2, AyaVisionBench, MathCanvas, 
-    KMMVisMathDataset, ChartQAKORDataset, ElementaryMathKORDataset
+    KMMVisMathDataset, ChartQAKORDataset, ElementaryMathDataset
 )
 
 from .image_ccocr import CCOCRDataset
@@ -241,7 +241,7 @@ TEXT_DATASET = [
 
 CUSTOM_DATASET = [
     CustomMCQDataset, CustomVQADataset, CustomTextMCQDataset,
-    KMMVisMathDataset, ChartQAKORDataset, ElementaryMathKORDataset
+    KMMVisMathDataset, ChartQAKORDataset, ElementaryMathDataset
 ]
 
 DATASET_COLLECTION = [ConcatDataset, ConcatVideoDataset]

@@ -294,7 +294,7 @@ class InternVLChat(BaseModel):
                 prompt = build_kmmvismath_kor_prompt(line)
             elif listinstr(['ChartQA_KOR'],dataset):
                 prompt = build_chartqa_kor_prompt(line)
-            elif listinstr(['ELEMENTARY_MATH_KOR'],dataset):
+            elif listinstr(['ELEMENTARY_MATH'],dataset):
                 prompt = build_elementary_math_kor_prompt(line)
             else:
                 prompt = question + '\nAnswer the question using a single word or phrase.'

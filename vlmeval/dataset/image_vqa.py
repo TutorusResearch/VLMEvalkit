@@ -210,7 +210,7 @@ class ChartQAKORDataset(ImageBaseDataset):
         
         return ret
 
-class ElementaryMathKORDataset(ImageBaseDataset):
+class ElementaryMathDataset(ImageBaseDataset):
     ELEMENTARY_MATH_PROMPT = dedent("""
         다음은 한국 초등학교 수학 문제입니다. 이미지를 보고 문제를 풀어주세요.
 
@@ -239,7 +239,7 @@ class ElementaryMathKORDataset(ImageBaseDataset):
     
     @classmethod
     def supported_datasets(cls):
-        return ['ELEMENTARY_MATH_KOR']
+        return ['ELEMENTARY_MATH']
 
     def load_data(self,dataset):
         data_path = osp.join(LMUDataRoot(), f'{dataset}.tsv')
@@ -275,7 +275,7 @@ class ElementaryMathKORDataset(ImageBaseDataset):
         pool = mp.Pool(16)
         lines = [data.iloc[i] for i in range(lt)]
         
-        if listinstr(['ELEMENTARY_MATH_KOR'], dataset):
+        if listinstr(['ELEMENTARY_MATH'], dataset):
             res = pool.map(partial(process_line,method='relaxed_accuracy_for_elementary_math_kor'),lines)
             
         data['eval_gt'] = [r['gt'] for r in res]

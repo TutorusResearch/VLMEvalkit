@@ -366,7 +366,7 @@ def build_chartqa_kor_prompt(line):
     return prompt
 
 def build_elementary_math_kor_prompt(line):
-    ELEMENTARY_MATH_KOR_PROMPT = dedent("""
+    ELEMENTARY_MATH_PROMPT = dedent("""
         다음은 한국 초등학교 수학 문제입니다. 이미지를 보고 문제를 풀어주세요.
 
         ## 답변 형식 지침
@@ -390,5 +390,5 @@ def build_elementary_math_kor_prompt(line):
 
         최종답변:
     """).strip()
-    prompt = ELEMENTARY_MATH_KOR_PROMPT.format_map({'question': line['question']})
+    prompt = ELEMENTARY_MATH_PROMPT.format_map({'question': line['question']})
     return prompt
