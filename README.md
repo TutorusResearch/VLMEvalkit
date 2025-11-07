@@ -62,7 +62,7 @@ pip install flash-attn --no-build-isolation
 #### 1. 데이터셋 권한 요청
 - KMM-VisMath [[huggingface](https://huggingface.co/datasets/Tutoruslabs/KMMVisMath)]
 - ChartQA_KOR [[huggingface](https://huggingface.co/datasets/Tutoruslabs/ChartQA_KOR)]
-- ELEMENTARY_MATH [[huggingface]()]
+- ELEMENTARY_MATH [[huggingface](https://huggingface.co/datasets/Tutoruslabs/ELEMENTARY_MATH)]
 
 #### 2. 평가용 데이터셋 다운로드
 VLMEvalKit 평가용 데이터셋 다운로드
