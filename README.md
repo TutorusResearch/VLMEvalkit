@@ -131,6 +131,14 @@ python run.py \
 --work-dir ./outputs/chartqa_kor
 ```
 
+## Acknowledgements
+
+본 데이터셋은 2023년도 정부(과학기술정보통신부)의 재원으로 정보통신기획평가원의 지원을 받아 수행된 연구임  
+**(과제번호: RS-2023-00216011, 사람처럼 개념적으로 이해/추론이 가능한 복합인공지능 원천기술 연구)**
+
+This work was supported by Institute of Information & Communications Technology Planning & Evaluation (IITP) grant funded by the Korea government (MSIT)  
+**(RS-2023-00216011, Development of artificial complex intelligence for conceptually understanding and inferring like human)**
+
 ## Citation
 
 - VLMEvalkit
