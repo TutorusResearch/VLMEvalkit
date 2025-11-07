@@ -10,19 +10,19 @@
 
 ## 데이터셋 구성
 
-### 1. KMM-VisMath [[huggingface](https://huggingface.co/datasets/Tutoruslabs/KMMVisMath)]
+### 1. KMM-VisMath [![HuggingFace](https://img.shields.io/badge/🤗%20HuggingFace-Dataset-yellow)](https://huggingface.co/datasets/Tutoruslabs/KMMVisMath)
 - **구성**: 수학 문제 해결에 필요한 핵심 정보(가격, 수량, 측정값 등)가 이미지로 제시되고, 이를 활용하여 풀어야 하는 한국어 질의문 및 단계별 추론 과정으로 구성.
 - **데이터 수량**: 복합추론 데이터 167개, 단순추론 데이터 1,888개
 - **특징**: 이미지 내 시각정보를 정확히 인식하고 질의문에서 요구하는 수학적 연산을 수행해야 답변 가능한 복합 추론 문제
 - **목적**: 시각-언어 모델의 시각 정보 추출 능력, 한국어 이해 능력, 수학적 추론 능력을 통합적으로 평가하기 위한 벤치마크 데이터셋
 
-### 2. 한국어 ChartQA [[huggingface](https://huggingface.co/datasets/Tutoruslabs/ChartQA_KOR)]
+### 2. 한국어 ChartQA [![HuggingFace](https://img.shields.io/badge/🤗%20HuggingFace-Dataset-yellow)](https://huggingface.co/datasets/Tutoruslabs/ChartQA_KOR)
 - **구성**: 차트 및 그래프 이미지(막대, 선, 파이 차트 등)와 이를 기반으로 한 한국어 질의문 및 답변으로 구성된 멀티모달 데이터셋. 
 - **데이터 수량**: 질의/답변 데이터 2,000개 (차트 이미지 1,000개)
 - **특징**: 원본 ChartQA의 영어 차트 이미지를 한국어로 번역하여, 차트 내 레이블, 범례, 축, 제목 등 모든 텍스트 요소가 한국어로 제공됨
 - **목적**: 시각-언어 모델의 한국어 차트 해석 능력, 시각 데이터 분석 능력, 그래프 기반 질의응답 능력을 평가하기 위한 데이터셋
 
-### 3. 초등 수학 멀티모달 데이터 [[huggingface](https://huggingface.co/datasets/Tutoruslabs/ELEMENTARY_MATH)]
+### 3. 초등 수학 멀티모달 데이터 [![HuggingFace](https://img.shields.io/badge/🤗%20HuggingFace-Dataset-yellow)](https://huggingface.co/datasets/Tutoruslabs/ELEMENTARY_MATH)
 - **구성**: 공간 지각, 패턴 인식, 논리적 사고 등 초등학생 수준의 수학적 사고력을 요구하는 이미지와 한국어 질의문 및 답변으로 구성된 벤치마크 데이터셋
 - **데이터 수량**: 질의/답변 데이터 448개 
 - **특징**: 단순 계산이 아닌 시각적 추론이 필요한 문제(ex. 여러 방향에서 본 블록 개수 추론, 도형 회전 및 변환 등)로, 이미지 기반 공간 인지 및 논리적 사고 능력 평가
@@ -62,9 +62,9 @@ pip install flash-attn --no-build-isolation
 ### 2. 데이터셋 준비
 
 #### 1. 데이터셋 권한 요청
-- KMM-VisMath [[huggingface](https://huggingface.co/datasets/Tutoruslabs/KMMVisMath)]
-- ChartQA_KOR [[huggingface](https://huggingface.co/datasets/Tutoruslabs/ChartQA_KOR)]
-- ELEMENTARY_MATH [[huggingface](https://huggingface.co/datasets/Tutoruslabs/ELEMENTARY_MATH)]
+- KMM-VisMath [![HuggingFace](https://img.shields.io/badge/🤗%20HuggingFace-Dataset-yellow)](https://huggingface.co/datasets/Tutoruslabs/KMMVisMath)
+- ChartQA_KOR [![HuggingFace](https://img.shields.io/badge/🤗%20HuggingFace-Dataset-yellow)](https://huggingface.co/datasets/Tutoruslabs/ChartQA_KOR)
+- ELEMENTARY_MATH [![HuggingFace](https://img.shields.io/badge/🤗%20HuggingFace-Dataset-yellow)](https://huggingface.co/datasets/Tutoruslabs/ELEMENTARY_MATH)
 
 #### 2. 평가용 데이터셋 다운로드
 VLMEvalKit 평가용 데이터셋 다운로드
