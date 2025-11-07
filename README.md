@@ -118,7 +118,7 @@ LMDEPLOY_API_BASE=
 EVAL_PROXY=
 ```
 
-- 
+- 상용모델 평가 스크립트
 ```bash
 export LMUData="./playground"
 python run.py \
