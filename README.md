@@ -2,6 +2,8 @@
 
 한국어 | [English](/docs/en/README_en.md)
 
+[![HuggingFace](https://img.shields.io/badge/🤗%20HuggingFace-Tutoruslabs-yellow)](https://huggingface.co/Tutoruslabs) [![Paper](https://img.shields.io/badge/📄%20Paper-arXiv-red)]()
+
 ## 개요
 
 이 저장소는 **한국어 수학 추론 작업**에 대한 **멀티모달 대규모 언어 모델(MLLMs)**을 평가하기 위한 종합적인 벤치마크를 제공합니다. [VLMEvalKit](https://github.com/open-compass/VLMEvalKit)을 기반으로 구축되었으며, 한국어 수학 문제를 이해하고 해결하는 모델의 능력을 평가하기 위한 엄격한 평가 프레임워크를 제공합니다.
@@ -127,4 +129,17 @@ python run.py \
 --mode all \ 
 --verbose \
 --work-dir ./outputs/chartqa_kor
+```
+
+## Citation
+
+- VLMEvalkit
+```
+@inproceedings{duan2024vlmevalkit,
+  title={Vlmevalkit: An open-source toolkit for evaluating large multi-modality models},
+  author={Duan, Haodong and Yang, Junming and Qiao, Yuxuan and Fang, Xinyu and Chen, Lin and Liu, Yuan and Dong, Xiaoyi and Zang, Yuhang and Zhang, Pan and Wang, Jiaqi and others},
+  booktitle={Proceedings of the 32nd ACM International Conference on Multimedia},
+  pages={11198--11201},
+  year={2024}
+}
 ```
