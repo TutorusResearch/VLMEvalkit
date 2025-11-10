@@ -1800,7 +1800,16 @@ internvl_series = {}
 for group in internvl_groups:
     internvl_series.update(group)
 
-supported_VLM = {}
+supported_VLM = {
+    "InternVL3_5-8B-Thinking_no_lmdeploy": partial(
+        InternVLChat, model_path="OpenGVLab/InternVL3_5-8B", use_lmdeploy=False,
+        max_new_tokens=2**16, cot_prompt_version="r1", do_sample=True, version="V2.0"
+    ),
+    "InternVL3_5-14B-Thinking_no_lmdeploy": partial(
+        InternVLChat, model_path="OpenGVLab/InternVL3_5-14B", use_lmdeploy=False,
+        max_new_tokens=2**16, cot_prompt_version="r1", do_sample=True, version="V2.0"
+    ),
+}
 
 model_groups = [
     ungrouped, o1_apis, api_models, xtuner_series, qwen_series, llava_series, granite_vision_series,
